@@ -16,3 +16,9 @@ const showModalWindow = function () {
 btnShowModalWindow.addEventListener('click', showModalWindow);
 btnCloseModalWindow.addEventListener('click', closeModalWindow);
 overlay.addEventListener('click', closeModalWindow);
+
+document.addEventListener('keydown', function (e) {
+  if (e.key === 'Escape' && !modalWindow.classList.contains('hidden')) {
+    closeModalWindow();
+  }
+});
